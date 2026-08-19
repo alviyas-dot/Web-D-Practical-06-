@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PRACTICAL 06</title>
+
+    <style>
+        body {
+            background-color: lightblue;
+        }
+
+        table {
+            background-color: white;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Student Grade Calculator</h2>
+
+    <p><b>Name:</b> Alviya Sheikh</p>
+    <p><b>USN:</b> CS25011</p>
+
+    <table border="1">
+        <tr>
+            <th>Subject</th>
+            <th>Enter Marks</th>
+        </tr>
+
+        <tr>
+            <td>DMGT</td>
+            <td><input type="number" id="sub1"></td>
+        </tr>
+
+        <tr>
+            <td>CAO</td>
+            <td><input type="number" id="sub2"></td>
+        </tr>
+
+        <tr>
+            <td>MDM</td>
+            <td><input type="number" id="sub3"></td>
+        </tr>
+
+        <tr>
+            <td>FCC</td>
+            <td><input type="number" id="sub4"></td>
+        </tr>
+
+        <tr>
+            <td>ED</td>
+            <td><input type="number" id="sub5"></td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center">
+                <button onclick="calculateGrade()">Calculate Result</button>
+            </td>
+        </tr>
+
+        
+        <tr>
+            <th>Total Marks</th>
+            <td id="total">-</td>
+        </tr>
+
+        <tr>
+            <th>Percentage</th>
+            <td id="percentage">-</td>
+        </tr>
+
+        <tr>
+            <th>Grade</th>
+            <td id="grade">-</td>
+        </tr>
+    </table>
+
+    <script>
+function calculateGrade() {
+
+            let m1 = Number(document.getElementById("sub1").value);
+            let m2 = Number(document.getElementById("sub2").value);
+            let m3 = Number(document.getElementById("sub3").value);
+            let m4 = Number(document.getElementById("sub4").value);
+            let m5 = Number(document.getElementById("sub5").value);
+            alert(m3);
+
+            let total = m1 + m2 + m3 + m4 + m5;
+
+            let percentage = (total / 500) * 100;
+
+            let grade;
+
+            if (percentage >= 90) {
+                grade = "A+";
+            }
+            else if (percentage >= 80) {
+                grade = "A";
+            }
+            else if (percentage >= 70) {
+                grade = "B";
+            }
+            else if (percentage >= 60) {
+                grade = "C";
+            }
+            else if (percentage >= 50) {
+                grade = "D";
+            }
+            else {
+                grade = "F";
+            }
+
+            document.getElementById("total").innerHTML = total + " / 500";
+            document.getElementById("percentage").innerHTML = percentage + "%";
+            document.getElementById("grade").innerHTML = grade;
+        }
+
+
+</script>
+
+</body>
+</html>
